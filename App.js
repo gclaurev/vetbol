@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -13,7 +14,17 @@ const Drawer = createDrawerNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Veterinarias">
+      <Drawer.Navigator
+        initialRouteName="Veterinarias"
+        drawerStyle={{
+          backgroundColor: '#fefacb',
+          width: 150,
+        }}
+        drawerContentOptions={{
+          activeTintColor: '#fec90b',
+          inactiveTintColor: '#552419',
+          itemStyle: {marginVertical: 1},
+        }}>
         <Drawer.Screen name="Veterinarias" component={Veterinaries} />
         <Drawer.Screen name="Productos" component={Products} />
         <Drawer.Screen name="Mayoristas" component={Wholesales} />
