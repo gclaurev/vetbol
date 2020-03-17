@@ -1,18 +1,24 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { SafeAreaView, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 
-function App() {
+import Veterinaries from './app/screens/drawer/veterinaries';
+import Products from './app/screens/drawer/products';
+import Wholesales from './app/screens/drawer/wholesales';
+import User from './app/screens/drawer/user';
+
+const Drawer = createDrawerNavigator();
+
+export default function App() {
   return (
     <NavigationContainer>
-      <SafeAreaView>
-        <View>
-          <Text>Soy App!</Text>
-        </View>
-      </SafeAreaView>
+      <Drawer.Navigator initialRouteName="Veterinarias">
+        <Drawer.Screen name="Veterinarias" component={Veterinaries} />
+        <Drawer.Screen name="Productos" component={Products} />
+        <Drawer.Screen name="Mayoristas" component={Wholesales} />
+        <Drawer.Screen name="Usuario" component={User} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
-
-export default App;

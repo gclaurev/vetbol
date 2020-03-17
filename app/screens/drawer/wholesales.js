@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, Text, View} from 'react-native';
 
-export default function Wholesales() {
+export default function Wholesales({navigation}) {
   return (
     <SafeAreaView>
       <View>
