@@ -1,4 +1,4 @@
-package com.vetbol;
+package com.flowconsulting.vetbolivia;
 
 import com.facebook.react.ReactActivity;
 

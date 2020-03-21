@@ -1,7 +1,10 @@
-Feature\OS          Android     iOS
+Feature\OS              Android     iOS
 ReactNavigation         ☑️         ☑️ 
 Drawer                  ☑️         ☑️ 
 Colored Drawer          ☑️         ☑️ 
-Bottom with icons	☑️         ☑️ 
+Bottom with icons	    ☑️         ☑️ 
+Firebase added          ☑️         
 
 
+addo firebase link
+https://invertase.io/oss/react-native-firebase/quick-start/existing-project

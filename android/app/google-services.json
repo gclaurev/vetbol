@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "451915408895",
+    "firebase_url": "https://veterinarias-bolivia.firebaseio.com",
+    "project_id": "veterinarias-bolivia",
+    "storage_bucket": "veterinarias-bolivia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451915408895:android:e2be25ebbda5106643f3ca",
+        "android_client_info": {
+          "package_name": "com.flowconsulting.vetbolivia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451915408895-t1dqu6q42h3kspjl5c0kcpkl8aq1fpun.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCB6icThSIRjJp1iCPbHjjeS1AyYnNQ2D4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451915408895-t1dqu6q42h3kspjl5c0kcpkl8aq1fpun.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
