@@ -17,6 +17,8 @@ import Lost from './app/screens/bottom-tab/lost';
 import Found from './app/screens/bottom-tab/found';
 import Adopt from './app/screens/bottom-tab/adopt';
 
+import {colors} from './app/styling/colors';
+
 const Drawer = createDrawerNavigator();
 const Tab = createMaterialBottomTabNavigator();
 
@@ -24,9 +26,9 @@ function createBottomTabs() {
   return (
     <Tab.Navigator
       initialRouteName="Perdidos"
-      activeColor="#fefacb"
-      inactiveColor="#552419"
-      barStyle={{backgroundColor: '#fec90b'}}>
+      activeColor={colors.backgroundYellow}
+      inactiveColor={colors.brown}
+      barStyle={{backgroundColor: colors.darkYellow}}>
       <Tab.Screen
         name="Perdidos"
         component={Lost}
@@ -61,12 +63,12 @@ function createDrawer() {
     <Drawer.Navigator
       initialRouteName="Inicio"
       drawerStyle={{
-        backgroundColor: '#fefacb',
+        backgroundColor: colors.backgroundYellow,
         width: 150,
       }}
       drawerContentOptions={{
-        activeTintColor: '#fec90b',
-        inactiveTintColor: '#552419',
+        activeTintColor: colors.darkYellow,
+        inactiveTintColor: colors.brown,
         itemStyle: {marginVertical: 1},
       }}>
       <Drawer.Screen name="Inicio" children={createBottomTabs} />
