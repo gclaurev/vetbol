@@ -6,9 +6,11 @@ Bottom with icons	    ☑️         ☑️
 Firebase added          ☑️         ☑️
 Datepicker added        ☑️         ☑️
 Overlay added           ☑️         ☑️
-
+ImagePicker added                 ☑️
 
 add firebase link
 https://invertase.io/oss/react-native-firebase/quick-start/existing-project
 add react native maps
 https://github.com/react-native-community/react-native-maps/blob/master/docs/installation.md
+add react native image picker
+https://github.com/react-native-community/react-native-image-picker
