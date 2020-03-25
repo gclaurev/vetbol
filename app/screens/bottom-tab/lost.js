@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   View,
@@ -7,11 +7,11 @@ import {
   Text,
   Platform,
 } from 'react-native';
-import {Button, Overlay} from 'react-native-elements';
+import { Button, Overlay } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import styles from '../../styling/vetBolStyles';
-import {colors} from '../../styling/colors';
+import { colors } from '../../styling/colors';
 
 import DateTimePicker from '@react-native-community/datetimepicker';
 
@@ -20,27 +20,19 @@ export default function Lost(props) {
   const [visible, setVisible] = useState(false);
 
   // datepicker
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
+  const [date, setDate] = useState(new Date());
   const [show, setShow] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
+    console.log(currentDate);
+    console.log(date);
   };
 
-  const showMode = currentMode => {
+  const showMode = () => {
     setShow(true);
-    setMode(currentMode);
-  };
-
-  const showDatepicker = () => {
-    showMode('date');
-  };
-
-  const showTimepicker = () => {
-    showMode('time');
   };
 
   function toggle() {
@@ -71,17 +63,23 @@ export default function Lost(props) {
           />
           <Text style={styles.overlayLabel}>Fecha:</Text>
           <View>
-            <Button onPress={showTimepicker} title="Show time picker!" />
+            <Button
+              buttonStyle={styles.overlayDateButton}
+              titleStyle={styles.overlayDateButtonTitle}
+              onPress={showMode}
+              title="Seleccionar Fecha"
+            />
           </View>
           {show && (
             <DateTimePicker
               testID="dateTimePicker"
               timeZoneOffsetInMinutes={0}
               value={date}
-              mode={mode}
+              mode="date"
               is24Hour={true}
               display="default"
               onChange={onChange}
+              maximumDate={new Date()}
             />
           )}
         </View>
