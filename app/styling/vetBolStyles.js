@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import { colors } from './colors';
+import {StyleSheet, PixelRatio} from 'react-native';
+import {colors} from './colors';
 
 export default StyleSheet.create({
   //Bottom tab
@@ -38,7 +38,7 @@ export default StyleSheet.create({
     right: 0,
     alignItems: 'center',
     justifyContent: 'center',
-    transform: [{ rotate: '45deg' }],
+    transform: [{rotate: '45deg'}],
   },
   closeButtonText: {
     color: colors.backgroundYellow,
@@ -82,5 +82,31 @@ export default StyleSheet.create({
   },
   overlayDateButtonTitle: {
     color: colors.brown,
+  },
+  pictureContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  avatarContainer: {
+    backgroundColor: colors.backgroundYellow,
+    borderColor: colors.darkYellow,
+    borderWidth: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  avatar: {
+    borderRadius: 75,
+    width: 150,
+    height: 150,
+  },
+  overlayFinishButton: {
+    backgroundColor: colors.darkYellow,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 18,
+    height: 35,
+    borderColor: colors.darkYellow,
+    borderWidth: 1,
   },
 });
