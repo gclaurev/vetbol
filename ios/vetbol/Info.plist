@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Solo aceptamos fotos de mascotas.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Solo aceptamos fotos de mascotas.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Solo aceptamos fotos de mascotas.</string>
 	<key>CFBundleDisplayName</key>
 	<string>vetbol</string>
 	<key>CFBundleExecutable</key>

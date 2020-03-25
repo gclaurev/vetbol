@@ -78,7 +78,7 @@ export default StyleSheet.create({
     height: 35,
     borderColor: colors.darkYellow,
     borderWidth: 1,
-    marginBottom: 3,
+    marginBottom: 5,
   },
   overlayDateButtonTitle: {
     color: colors.brown,
