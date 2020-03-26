@@ -95,7 +95,7 @@ export default function Lost(props) {
     <SafeAreaView style={styles.safeArea}>
       <Overlay isVisible={visible}>
         <View style={styles.container}>
-          <Text style={styles.overlayTitle}>NUEVO PERDIDO  🐶💛🐱</Text>
+          <Text style={styles.overlayTitle}>🐶💛 NUEVO PERDIDO 💛🐱</Text>
           <TouchableOpacity
             style={styles.closeOverlay}
             onPress={toggle}

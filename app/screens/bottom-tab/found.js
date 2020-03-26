@@ -1,14 +1,25 @@
-import React from 'react';
-import {SafeAreaView, Text, View} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {SafeAreaView, Text, View, Button, FlatList} from 'react-native';
 
-//firebase
-import firebase from '@react-native-firebase/app';
+import {getKey, storeOne} from '../../services/database';
 
 export default function Found() {
+  async function storeItem() {
+    const id = getKey();
+    const item1 = 'item1';
+    const toStore = {
+      item1,
+      item2: 'item2',
+      item3: 'item3',
+      item4: 'item4' + Math.random(),
+    };
+    storeOne(id, 'lost', toStore);
+  }
+
   return (
     <SafeAreaView>
       <View>
-        <Text>Encontrados</Text>
+        <Button title="New items" onPress={storeItem} />
       </View>
     </SafeAreaView>
   );
