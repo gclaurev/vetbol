@@ -20,7 +20,7 @@ export default function Adpot() {
   const [avatarSource, setAvatarSource] = useState(false);
 
   const saveImage = () => {
-    uploadImage('el name', avatarSource);
+    uploadImage('elname', avatarSource);
   };
 
   const selectPhotoTapped2 = () => {
@@ -44,7 +44,7 @@ export default function Adpot() {
       } else if (response.customButton) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
-        const source = {uri: response.uri};
+        const source = response;
         setAvatarSource(source);
       }
     });

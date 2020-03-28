@@ -1,31 +1,45 @@
 import React, {useState} from 'react';
-import storage from '@react-native-firebase/storage';
+import {firebase} from '@react-native-firebase/storage';
 
-export function uploadImage(imageName, image) {
-  const url = false;
-  console.log('url', url);
-  console.log('url', image);
-  console.log('url', image.uri);
+export async function uploadImage(imageName, image) {
+  var url = false;
 
   if (image.uri) {
-    const fileExtension = image.uri.split('.').pop();
-    console.log('EXT: ' + fileExtension);
+    try {
+      const fileExtension = image.uri.split('.').pop();
+      console.log('1fileExtension: ' + fileExtension);
 
-    const fileName = `${imageName}.${fileExtension}`;
-    console.log(fileName);
+      const fileName = `${imageName}.${fileExtension}`;
+      console.log('2fileName: ', fileName);
 
-    var storageRef = storage.ref(`lost/${fileName}`);
+      // var storageRef = firebase
+      //   .storage()
+      //   .ref(`lost/${fileName}`);
+      //   // .refFromURL(`gs://veterinarias-bolivia.appspot.com/lost/${fileName}`);
+      // console.log('3storageRef: ', storageRef);
 
-    storageRef.putFile(image.uri).on(
-      storage.TaskEvent.STATE_CHANGED,
-      () => {},
-      error => {},
-      () => {
-        storageRef.getDownloadURL().then(downloadUrl => {
-          this.url = downloadUrl;
-        });
-      },
-    );
+      // console.log('4image.path: ', image.path);
+      // const task = storageRef.putFile(decodeURI(image.uri), {
+      //   cacheControl: 'no-store', // disable caching
+      // });
+      // console.log('5.1 task', task);
+      // url = await storageRef.getDownloadURL();
+      // console.log('5.2 url', url);
+
+      const uri =
+        Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
+      const imageRef = firebase
+        .storage()
+        .ref('images/')
+        .child('blah');
+      await imageRef.putFile(uri);
+      const imageUrl = await imageRef.getDownloadURL();
+      console.log('3 imageUrl: ', imageUrl);
+
+      
+    } catch (error) {
+      console.log('6error: ', error);
+    }
     return url;
   }
 }
