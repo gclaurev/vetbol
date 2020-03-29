@@ -1,31 +1,25 @@
-import React, {useState} from 'react';
-import storage from '@react-native-firebase/storage';
+import Platform from 'react-native';
+import {firebase} from '@react-native-firebase/storage';
 
-export function uploadImage(imageName, image) {
-  const url = false;
-  console.log('url', url);
-  console.log('url', image);
-  console.log('url', image.uri);
+export async function uploadImage(type, imageName, image) {
+  var imageUrl = false;
 
   if (image.uri) {
-    const fileExtension = image.uri.split('.').pop();
-    console.log('EXT: ' + fileExtension);
+    try {
+      const fileExtension = image.uri.split('.').pop();
+      const fileName = `${imageName}.${fileExtension}`;
 
-    const fileName = `${imageName}.${fileExtension}`;
-    console.log(fileName);
-
-    var storageRef = storage.ref(`lost/${fileName}`);
-
-    storageRef.putFile(image.uri).on(
-      storage.TaskEvent.STATE_CHANGED,
-      () => {},
-      error => {},
-      () => {
-        storageRef.getDownloadURL().then(downloadUrl => {
-          this.url = downloadUrl;
-        });
-      },
-    );
-    return url;
+      const uri =
+        Platform.OS === 'ios' ? image.uri.replace('file://', '') : image.uri;
+      const imageRef = firebase
+        .storage()
+        .ref(`${type}/`)
+        .child(fileName);
+      await imageRef.putFile(uri);
+      imageUrl = await imageRef.getDownloadURL();
+    } catch (error) {
+      console.log('error: ', error);
+    }
+    return imageUrl;
   }
 }
