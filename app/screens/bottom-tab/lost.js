@@ -6,13 +6,15 @@ import {
   TextInput,
   Text,
   Platform,
-  StyleSheet,
   ScrollView,
   Image,
 } from 'react-native';
 import {Button, Overlay} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+//Storing
+import {storeOneForLists, getKey} from '../../services/database';
+
+//Appearance
 import styles from '../../styling/vetBolStyles';
 import {colors} from '../../styling/colors';
 
@@ -37,13 +39,26 @@ export default function Lost(props) {
   }
 
   function finish() {
-    console.log(avatarSource);
-    console.log(visible);
-    console.log(show);
-    console.log(name);
+    const id = getKey();
+    storeOneForLists(
+      id,
+      'lost',
+      {
+        name,
+        desc,
+        whatsApp,
+        address,
+        date,
+      },
+      image,
+    );
+    setName(false);
+    setDesc(false);
+    setWhatsApp(false);
+    setAddress(false);
     setVisible(false);
     setShow(false);
-    setAvatarSource(false);
+    setImage(false);
   }
 
   // datepicker
@@ -63,7 +78,7 @@ export default function Lost(props) {
   };
 
   //Image picker
-  const [avatarSource, setAvatarSource] = useState(false);
+  const [image, setImage] = useState(false);
 
   const selectPhotoTapped = () => {
     const options = {
@@ -86,7 +101,7 @@ export default function Lost(props) {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = {uri: response.uri};
-        setAvatarSource(source);
+        setImage(source);
       }
     });
   };
@@ -162,12 +177,12 @@ export default function Lost(props) {
                   styles.avatarContainer,
                   {marginBottom: 5},
                 ]}>
-                {avatarSource === false ? (
+                {image === false ? (
                   <Text style={styles.overlayDateButtonTitle}>
                     Click para subir foto
                   </Text>
                 ) : (
-                  <Image style={styles.avatar} source={avatarSource} />
+                  <Image style={styles.avatar} source={image} />
                 )}
               </View>
             </TouchableOpacity>
