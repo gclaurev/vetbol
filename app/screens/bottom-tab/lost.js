@@ -6,14 +6,16 @@ import {
   TextInput,
   Text,
   Platform,
+  StyleSheet,
   ScrollView,
   Image,
 } from 'react-native';
 import {Button, Overlay} from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-//Storing
-import {storeOneForLists, getKey} from '../../services/database';
-
+//Util
+import {simplifiedDate} from '../../services/utils';
+import {getKey, storeOneForLists} from '../../services/database';
 //Appearance
 import styles from '../../styling/vetBolStyles';
 import {colors} from '../../styling/colors';
@@ -48,7 +50,7 @@ export default function Lost(props) {
         desc,
         whatsApp,
         address,
-        date,
+        lost: simplifiedDate(date),
       },
       image,
     );
@@ -146,28 +148,7 @@ export default function Lost(props) {
               placeholder="Av. Beni esq. 4to anillo..."
               onChangeText={val => setAddress(val)}
             />
-            <Text style={styles.overlayLabel}>Fecha:</Text>
-            <View>
-              <Button
-                buttonStyle={styles.overlayDateButton}
-                titleStyle={styles.overlayDateButtonTitle}
-                onPress={showMode}
-                title="Seleccionar Fecha"
-              />
-            </View>
-            {show && (
-              <DateTimePicker
-                testID="dateTimePicker"
-                timeZoneOffsetInMinutes={0}
-                value={date}
-                mode="date"
-                is24Hour={true}
-                display="default"
-                onChange={onChange}
-                maximumDate={new Date()}
-              />
-            )}
-
+            <Text style={styles.overlayLabel}>Foto:</Text>
             <TouchableOpacity
               style={styles.pictureContainer}
               onPress={selectPhotoTapped}>
@@ -186,6 +167,27 @@ export default function Lost(props) {
                 )}
               </View>
             </TouchableOpacity>
+            <Text style={styles.overlayLabel}>Fecha:</Text>
+            <View>
+              <Button
+                buttonStyle={styles.overlayDateButton}
+                titleStyle={styles.overlayDateButtonTitle}
+                onPress={showMode}
+                title="Seleccionar fecha"
+              />
+            </View>
+            {show && (
+              <DateTimePicker
+                testID="dateTimePicker"
+                timeZoneOffsetInMinutes={0}
+                value={date}
+                mode="date"
+                is24Hour={true}
+                display="default"
+                onChange={onChange}
+                maximumDate={new Date()}
+              />
+            )}
           </ScrollView>
           <View>
             <Button
