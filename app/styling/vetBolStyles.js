@@ -108,5 +108,6 @@ export default StyleSheet.create({
     height: 35,
     borderColor: colors.darkYellow,
     borderWidth: 1,
+    marginTop: 5,
   },
 });
