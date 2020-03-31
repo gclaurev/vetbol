@@ -4,4 +4,5 @@ export const colors = {
   backgroundYellow: '#fefacb',
   brown: '#552419',
   red: '#f24b25',
+  whatsApp: '#25d366',
 };

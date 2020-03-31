@@ -2,9 +2,40 @@ import {StyleSheet, PixelRatio} from 'react-native';
 import {colors} from './colors';
 
 export default StyleSheet.create({
+  //Title
+  title: {
+    color: colors.brown,
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 15,
+  },
   //Bottom tab
+  headerImageContainer: {
+    alignItems: 'center',
+  },
+  headerImage: {
+    height: 100,
+    width: '95%',
+    resizeMode: 'contain',
+  },
+  bottomCat: {
+    position: 'absolute',
+    width: 50,
+    height: 91,
+    resizeMode: 'contain',
+    bottom: 0,
+    left: 95,
+  },
+  bottomDog: {
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    resizeMode: 'contain',
+    bottom: 55,
+    right: 5,
+  },
   safeArea: {
-    backgroundColor: colors.backgroundYellow,
     flex: 1,
   },
   container: {
@@ -109,5 +140,109 @@ export default StyleSheet.create({
     borderColor: colors.darkYellow,
     borderWidth: 1,
     marginTop: 5,
+  },
+
+  //Item
+  itemContainer: {
+    flexDirection: 'row',
+    height: 115,
+    borderColor: colors.brown,
+    borderWidth: 1,
+    borderRadius: 20,
+    marginLeft: 10,
+    marginRight: 10,
+    marginTop: 10,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 50,
+      height: 0,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 10,
+    elevation: 3,
+  },
+  itemImageContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemImage: {
+    height: 100,
+    width: 100,
+    borderRadius: 15,
+  },
+  itemContent: {
+    flex: 2,
+    flexDirection: 'column',
+  },
+  itemName: {
+    color: colors.brown,
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 5,
+  },
+  itemText: {
+    color: colors.brown,
+    fontSize: 12,
+  },
+
+  //Item Overlay
+  itemOverlayName: {
+    color: colors.brown,
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 5,
+  },
+  itemOverlayImageContainer: {
+    alignItems: 'center',
+    margin: 5,
+  },
+  itemOverlayImage: {
+    height: 200,
+    width: 200,
+    borderRadius: 30,
+  },
+  itemOverlayWhatsAppLabel: {
+    color: 'white',
+    fontSize: 17,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 5,
+  },
+  itemOverlayWhatsApp: {
+    backgroundColor: colors.whatsApp,
+    borderRadius: 18,
+    height: 35,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  itemOverlayLabel: {
+    marginLeft: 15,
+    color: colors.brown,
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign: 'left',
+    marginBottom: 3,
+  },
+  itemOverlayLabelText: {
+    marginLeft: 15,
+    color: colors.brown,
+    fontSize: 12,
+    textAlign: 'left',
+    marginBottom: 3,
+  },
+
+  //Others
+  center: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
