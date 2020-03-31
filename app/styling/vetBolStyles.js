@@ -155,11 +155,11 @@ export default StyleSheet.create({
     backgroundColor: 'white',
     shadowColor: '#000',
     shadowOffset: {
-      width: 50,
-      height: 0,
+      width: 2,
+      height: 3,
     },
-    shadowOpacity: 0.5,
-    shadowRadius: 10,
+    shadowOpacity: 0.25,
+    shadowRadius: 2,
     elevation: 3,
   },
   itemImageContainer: {
