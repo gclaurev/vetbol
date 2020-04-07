@@ -49,7 +49,9 @@ export default function Adopt() {
 
   //Item Overlay
   const [itemVisible, setItemVisible] = useState(false);
-  const [itemImage, setItemImage] = useState(false);
+  const [itemImage, setItemImage] = useState(
+    'https://firebasestorage.googleapis.com/v0/b/veterinarias-bolivia.appspot.com/o/others%2Fdog.png?alt=media&token=1ab66ba9-49c7-4bf7-b211-57fc9eae000c',
+  );
   const [itemName, setItemName] = useState(false);
   const [itemDesc, setItemDesc] = useState(false);
   const [itemWhatsApp, setItemWhatsApp] = useState(false);
