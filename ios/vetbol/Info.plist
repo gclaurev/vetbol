@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>Necesitamos conocer tu ubicación actual para mejorar la calidad d enuestros servicios</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Solo aceptamos fotos de mascotas.</string>
 	<key>NSCameraUsageDescription</key>
