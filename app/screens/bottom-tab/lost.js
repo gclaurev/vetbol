@@ -41,7 +41,6 @@ export default function Lost() {
       list.push({...pet._snapshot.value});
     });
     setPets(list);
-    console.log('list ', list);
     setLoading(false);
   }
 

@@ -141,6 +141,30 @@ export default StyleSheet.create({
     borderWidth: 1,
     marginTop: 5,
   },
+  overlayCheckBoxText: {
+    color: colors.brown,
+    fontSize: 10,
+  },
+  overlayTextInputHours: {
+    alignItems: 'center',
+    height: 35,
+    width: 42,
+    color: colors.brown,
+    fontSize: 12,
+    backgroundColor: colors.backgroundYellow,
+    borderColor: colors.darkYellow,
+    borderWidth: 1,
+  },
+  overlayLabelHours: {
+    color: colors.brown,
+    fontSize: 12,
+    textAlign: 'center',
+  },
+  overlayHoursRow: {
+    marginBottom: 5,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 
   //Item
   itemContainer: {
