@@ -259,6 +259,55 @@ export default StyleSheet.create({
     marginBottom: 3,
   },
 
+  //Item Vet
+  itemContainerVet: {
+    borderRadius: 25,
+    flexDirection: 'row',
+    height: 135,
+    borderColor: colors.brown,
+    borderWidth: 1,
+    marginLeft: 7,
+    marginRight: 7,
+    marginTop: 15,
+    backgroundColor: 'white',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 2,
+      height: 3,
+    },
+  },
+  itemImageContainerVet: {
+    flex: 1.5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  itemContentVet: {
+    flex: 2.5,
+    flexDirection: 'column',
+  },
+  itemImageVet: {
+    height: 115,
+    width: 115,
+    borderRadius: 20,
+  },
+  itemNameVet: {
+    color: colors.brown,
+    fontSize: 10,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    margin: 1,
+  },
+  itemTextTitleVet: {
+    fontWeight: 'bold',
+    color: colors.brown,
+    fontSize: 8,
+  },
+  itemTextVet: {
+    color: colors.brown,
+    fontSize: 8,
+    marginBottom: -2,
+  },
+
   //Others
   center: {
     position: 'absolute',
