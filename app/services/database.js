@@ -9,13 +9,20 @@ export function getKey() {
 
 export async function storeOneForLists(id, type, item, image) {
   const storedItem = database().ref(`/${type}/${id}`);
-  await storedItem.set({
-    id,
-    ...item,
-    imageUrl: await uploadImage(
-      type,
-      getFileName(item.name, item.whatsApp),
-      image,
-    ),
-  });
+  if (image) {
+    await storedItem.set({
+      id,
+      ...item,
+      imageUrl: await uploadImage(
+        type,
+        getFileName(item.name, item.whatsApp),
+        image,
+      ),
+    });
+  } else {
+    await storedItem.set({
+      id,
+      ...item,
+    });
+  }
 }
