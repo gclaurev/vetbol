@@ -141,7 +141,7 @@ export default function Veterinaries() {
   const [sundayEndTwo, setSundayEndTwo] = useState(false);
 
   //item
-  const [itemName, setItemName] = useState(false);
+  const [itemName, setItemName] = useState('Veterinarias Bolivia');
   const [itemWhatsApp, setItemWhatsApp] = useState(false);
   const [itemImageUrl, setItemImageUrl] = useState();
   const [itemAmbulance, setItemAmbulance] = useState(false);
@@ -193,7 +193,7 @@ export default function Veterinaries() {
   }
 
   //Days
-  const [monday, setMonday] = useState(false);
+  const [monday, setMonday] = useState('24 horas.');
   const [tuesday, setTuesday] = useState(false);
   const [wednesday, setWednesday] = useState(false);
   const [thursday, setThursday] = useState(false);
@@ -201,7 +201,7 @@ export default function Veterinaries() {
   const [saturday, setSaturday] = useState(false);
   const [sunday, setSunday] = useState(false);
 
-  const [services, setServices] = useState(false);
+  const [services, setServices] = useState('Emergencias');
 
   var list = [];
   function servicesToFalse() {
