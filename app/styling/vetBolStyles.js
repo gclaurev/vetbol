@@ -292,7 +292,7 @@ export default StyleSheet.create({
   },
   itemNameVet: {
     color: colors.brown,
-    fontSize: 10,
+    fontSize: Platform.OS === 'ios' ? 12 :10,
     fontWeight: 'bold',
     textAlign: 'center',
     margin: 1,
@@ -300,11 +300,11 @@ export default StyleSheet.create({
   itemTextTitleVet: {
     fontWeight: 'bold',
     color: colors.brown,
-    fontSize: 8,
+    fontSize: Platform.OS === 'ios' ? 10 :8,
   },
   itemTextVet: {
     color: colors.brown,
-    fontSize: 8,
+    fontSize: Platform.OS === 'ios' ? 10 :8,
     marginBottom: -2,
   },
 

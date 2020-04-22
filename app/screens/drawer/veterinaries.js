@@ -240,6 +240,7 @@ export default function Veterinaries() {
             latitude: parseFloat(element.latitude),
             longitude: parseFloat(element.longitude),
           }}
+          centerOffset={{ x: 0, y: -30 }}
           onPress={() => {
             servicesToFalse();
             setItemName(element.name ? element.name : false);
@@ -617,7 +618,7 @@ export default function Veterinaries() {
         </View>
         <View style={{alignItems: 'center'}}>
           <MapView
-            style={{height: 360, width: '95%'}}
+            style={{height: Platform.OS === 'ios' ? 390 :360, width: '95%'}}
             region={{
               //Home
               // latitude: -17.736334,
