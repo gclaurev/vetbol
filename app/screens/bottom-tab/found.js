@@ -14,6 +14,7 @@ import {
   Linking,
 } from 'react-native';
 import {Button, Overlay} from 'react-native-elements';
+import {useForm} from 'react-hook-form';
 
 //Util
 import database from '@react-native-firebase/database';
@@ -31,6 +32,9 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import ImagePicker from 'react-native-image-picker';
 
 export default function Found() {
+  //Form Hook
+  const {register, handleSubmit, setValue, errors} = useForm();
+
   //List
   const [loading, setLoading] = useState(true);
   const [pets, setPets] = useState([]);
@@ -48,7 +52,43 @@ export default function Found() {
   useEffect(() => {
     const ref = database().ref('found');
     ref.once('value', fillList);
-  }, []);
+    register(
+      {name: 'formName'},
+      {
+        required: 'Campo requerido',
+        maxLength: {value: 25, message: 'Máximo 25 caracteres'},
+      },
+    );
+    register(
+      {name: 'formDesc'},
+      {
+        required: 'Campo requerido',
+        maxLength: {value: 50, message: 'Máximo 50 caracteres'},
+      },
+    );
+    register(
+      {name: 'formWhatsApp'},
+      {
+        required: 'Campo requerido',
+        minLength: {value: 8, message: 'Número de WhatsApp inválido'},
+        maxLength: {value: 8, message: 'Número de WhatsApp inválido'},
+      },
+    );
+    register(
+      {name: 'formAddress'},
+      {
+        required: 'Campo requerido',
+        maxLength: {value: 50, message: 'Máximo 50 caracteres'},
+      },
+    );
+    register(
+      {name: 'formCity'},
+      {
+        required: 'Campo requerido',
+        maxLength: {value: 10, message: 'Máximo 10 caracteres'},
+      },
+    );
+  }, [register]);
 
   //Item Overlay
   const [itemVisible, setItemVisible] = useState(false);
@@ -60,6 +100,7 @@ export default function Found() {
   const [itemWhatsApp, setItemWhatsApp] = useState(false);
   const [itemAddress, setItemAddress] = useState(false);
   const [itemFound, setItemFound] = useState(false);
+  const [itemCity, setItemCity] = useState(false);
 
   function overlayItem(item) {
     setItemName(item.name);
@@ -68,8 +109,8 @@ export default function Found() {
     setItemWhatsApp(item.whatsApp);
     setItemAddress(item.address);
     setItemFound(item.found);
+    setItemCity(item.city);
     setItemVisible(true);
-    console.log('ure: ', itemImage);
   }
 
   const sendWhatsApp = () => {
@@ -88,6 +129,7 @@ export default function Found() {
   const [desc, setDesc] = useState(false);
   const [whatsApp, setWhatsApp] = useState(false);
   const [address, setAddress] = useState(false);
+  const [city, setCity] = useState(false);
 
   //overlay
   const [visible, setVisible] = useState(false);
@@ -96,19 +138,20 @@ export default function Found() {
     setVisible(prevState => !prevState);
   }
 
-  function finish() {
+  const finish = data => {
     const id = getKey();
     storeOneForLists(
       id,
       'found',
       {
-        name,
-        desc,
-        whatsApp,
-        address,
+        name: data.formName,
+        desc: data.formDesc,
+        whatsApp: data.formWhatsApp,
+        address: data.formAddress,
         found: simplifiedDate(date),
+        city: data.formCity,
       },
-      image,
+      data.formImage,
     );
     setName(false);
     setDesc(false);
@@ -117,7 +160,8 @@ export default function Found() {
     setVisible(false);
     setShow(false);
     setImage(false);
-  }
+    setCity(false);
+  };
 
   // datepicker
   const [date, setDate] = useState(new Date());
@@ -127,8 +171,6 @@ export default function Found() {
     const currentDate = selectedDate || date;
     setShow(Platform.OS === 'ios');
     setDate(currentDate);
-    console.log(currentDate);
-    console.log(date);
   };
 
   const showMode = () => {
@@ -159,6 +201,7 @@ export default function Found() {
         console.log('User tapped custom button: ', response.customButton);
       } else {
         const source = {uri: response.uri};
+        setValue('formImage', source);
         setImage(source);
       }
     });
@@ -194,10 +237,11 @@ export default function Found() {
               </View>
               <View style={styles.itemContent}>
                 <Text style={styles.itemName}>💛 {item.name} 💛</Text>
-                <Text style={styles.itemText}>Descripción: {item.desc}</Text>
-                <Text style={styles.itemText}>Dirección: {item.address}</Text>
+                <Text style={styles.itemText}>Desc: {item.desc}</Text>
+                <Text style={styles.itemText}>Dir: {item.address}</Text>
                 <Text style={styles.itemText}>WhatsApp: {item.whatsApp}</Text>
                 <Text style={styles.itemText}>Fecha: {item.found}</Text>
+                <Text style={styles.itemText}>Dpto: {item.city}</Text>
               </View>
             </TouchableOpacity>
           )}
@@ -214,32 +258,69 @@ export default function Found() {
             </TouchableOpacity>
             <ScrollView>
               <Text style={styles.overlayLabel}>Nombre del peludito:</Text>
+              {errors.formName && (
+                <Text style={styles.overlayLabelError}>
+                  {errors.formName.message}
+                </Text>
+              )}
               <TextInput
                 style={styles.overlayTextInput}
                 selectionColor={colors.brown}
                 placeholder="Recorcholis"
-                onChangeText={val => setName(val)}
+                onChangeText={val => setValue('formName', val)}
+                // onChangeText={val => setName(val)}
               />
               <Text style={styles.overlayLabel}>Descripción:</Text>
+              {errors.formDesc && (
+                <Text style={styles.overlayLabelError}>
+                  {errors.formDesc.message}
+                </Text>
+              )}
               <TextInput
                 style={styles.overlayTextInput}
                 selectionColor={colors.brown}
                 placeholder="Plomo con blanco y collar azul."
-                onChangeText={val => setDesc(val)}
+                onChangeText={val => setValue('formDesc', val)}
+                // onChangeText={val => setDesc(val)}
               />
               <Text style={styles.overlayLabel}>WhatsApp:</Text>
+              {errors.formWhatsApp && (
+                <Text style={styles.overlayLabelError}>
+                  {errors.formWhatsApp.message}
+                </Text>
+              )}
               <TextInput
                 style={styles.overlayTextInput}
                 selectionColor={colors.brown}
                 placeholder="60977768"
-                onChangeText={val => setWhatsApp(val)}
+                onChangeText={val => setValue('formWhatsApp', val)}
+                // onChangeText={val => setWhatsApp(val)}
               />
               <Text style={styles.overlayLabel}>Dirección:</Text>
+              {errors.formAddress && (
+                <Text style={styles.overlayLabelError}>
+                  {errors.formAddress.message}
+                </Text>
+              )}
               <TextInput
                 style={styles.overlayTextInput}
                 selectionColor={colors.brown}
                 placeholder="Av. Beni esq. 3er anillo..."
-                onChangeText={val => setAddress(val)}
+                onChangeText={val => setValue('formAddress', val)}
+                // onChangeText={val => setAddress(val)}
+              />
+              <Text style={styles.overlayLabel}>Departamento:</Text>
+              {errors.formCity && (
+                <Text style={styles.overlayLabelError}>
+                  {errors.formCity.message}
+                </Text>
+              )}
+              <TextInput
+                style={styles.overlayTextInput}
+                selectionColor={colors.brown}
+                placeholder="Santa Cruz"
+                onChangeText={val => setValue('formCity', val)}
+                // onChangeText={val => setCity(val)}
               />
               <Text style={styles.overlayLabel}>Foto:</Text>
               <TouchableOpacity
@@ -266,7 +347,7 @@ export default function Found() {
                   buttonStyle={styles.overlayDateButton}
                   titleStyle={styles.overlayDateButtonTitle}
                   onPress={showMode}
-                  title="Seleccionar fecha"
+                  title={date ? simplifiedDate(date) : 'Seleccionar fecha'}
                 />
               </View>
               {show && (
@@ -286,7 +367,7 @@ export default function Found() {
               <Button
                 buttonStyle={styles.overlayFinishButton}
                 titleStyle={styles.overlayDateButtonTitle}
-                onPress={finish}
+                onPress={handleSubmit(finish)}
                 title="Finalizar registro"
               />
             </View>
@@ -319,6 +400,8 @@ export default function Found() {
               </TouchableOpacity>
               <Text style={styles.itemOverlayLabel}>Dirección:</Text>
               <Text style={styles.itemOverlayLabelText}>{itemAddress}</Text>
+              <Text style={styles.itemOverlayLabel}>Departamento:</Text>
+              <Text style={styles.itemOverlayLabelText}>{itemCity}</Text>
               <Text style={styles.itemOverlayLabel}>Fecha:</Text>
               <Text style={styles.itemOverlayLabelText}>{itemFound}</Text>
             </ScrollView>
