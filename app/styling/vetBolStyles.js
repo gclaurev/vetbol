@@ -22,7 +22,7 @@ export default StyleSheet.create({
   bottomCat: {
     position: 'absolute',
     width: 50,
-    height: 91,
+    height: 72,
     resizeMode: 'contain',
     bottom: 0,
     left: 95,
@@ -176,7 +176,7 @@ export default StyleSheet.create({
   //Item
   itemContainer: {
     flexDirection: 'row',
-    height: 115,
+    height: 135,
     borderColor: colors.brown,
     borderWidth: 1,
     borderRadius: 20,
