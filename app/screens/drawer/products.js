@@ -39,6 +39,12 @@ export default function Products() {
   function addToList(item) {
     const itemToAdd = ({imageUrl, ...rest}) => rest;
     listItems.push(itemToAdd(item));
+    Alert.alert(
+      '¡Producto Añadido!',
+      `Se añadió ${item.name} a su pedido.`,
+      [{text: 'OK'}],
+      {cancelable: false},
+    );
   }
 
   function colapseOrder(list) {

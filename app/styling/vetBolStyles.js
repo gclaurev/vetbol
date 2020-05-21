@@ -90,6 +90,13 @@ export default StyleSheet.create({
     textAlign: 'left',
     marginBottom: 3,
   },
+  overlayLabelError: {
+    marginLeft: 15,
+    color: colors.red,
+    fontSize: 12,
+    textAlign: 'left',
+    marginBottom: 3,
+  },
   overlayTextInput: {
     color: colors.brown,
     paddingLeft: 15,
@@ -209,7 +216,7 @@ export default StyleSheet.create({
   },
   itemText: {
     color: colors.brown,
-    fontSize: 12,
+    fontSize: 11,
   },
 
   //Item Overlay
