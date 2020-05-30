@@ -12,6 +12,7 @@
 #import <React/RCTRootView.h>
 
 #import <GoogleMaps/GoogleMaps.h>
+#import "RNSplashScreen.h"
 
 @import Firebase;
 
@@ -32,7 +33,9 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
   [FIRApp configure];
+  [RNSplashScreen show];
   return YES;
 }
 

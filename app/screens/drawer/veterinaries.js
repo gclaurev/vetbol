@@ -635,7 +635,7 @@ export default function Veterinaries() {
         </View>
         <Overlay isVisible={visible}>
           <View style={styles.container}>
-            <Text style={styles.overlayTitle}>🩺 NUEVO VETERINARIO ⛑️</Text>
+            <Text style={styles.overlayTitle}>👩🏻‍🔬 NUEVO VETERINARIO 🧑🏻‍🔬</Text>
             <TouchableOpacity
               style={styles.closeOverlay}
               onPress={toggle}
