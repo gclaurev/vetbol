@@ -5,6 +5,7 @@ import {
   SafeAreaView,
   Text,
   View,
+  Platform,
 } from 'react-native';
 
 import AppleSignIn from '../../services/login/apple';
@@ -20,7 +21,6 @@ export default function Users() {
   return (
     <SafeAreaView>
       <View>
-        <AppleSignIn/>
         <Text>Quiero registrarme como usuario</Text>
         <TouchableOpacity
           style={styles.itemOverlayWhatsApp}
@@ -28,6 +28,7 @@ export default function Users() {
           <Text style={styles.itemOverlayWhatsAppLabel}>💬 70380258 💬</Text>
         </TouchableOpacity>
       </View>
+      <View>{Platform.OS === 'ios' && <AppleSignIn />}</View>
     </SafeAreaView>
   );
 }
