@@ -724,7 +724,7 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@invertase/react-native-apple-authentication@^1.0.0":
+"@invertase/react-native-apple-authentication@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-1.0.0.tgz#710a2aa1f1d371931209a14b98ff2c0304847dce"
   integrity sha512-khGov+L/Qhxows3aazyXSMB/Hy0ZpMvjDSp4eWzX00uv1WCFRxSUd+IHGsCKKT0IB3GVzDygYoqYGj8xu6ahWA==
@@ -1070,7 +1070,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.0.0.tgz#ae9a430f2c5795debca491f15a989fce86ea75a0"
   integrity sha512-GLhSN8dRt4lpixPQh+8prSCy6PYk/MT/mvji/ojAd5yshowDo6HFsimCSTD/uWAdjpUq91XK9tVdTNWfGRlKQA==
 
-"@react-native-community/geolocation@^2.0.2":
+"@react-native-community/geolocation@2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-2.0.2.tgz#ba8b40f560ead8d014740d1cdea970b33f19312e"
   integrity sha512-tTNXRCgnhJBu79mulQwzabXRpDqfh/uaDqfHVpvF0nX4NTpolpy6mvTRiFg7eWFPGRArsnZz1EYp6rHfJWGgEA==
@@ -1080,19 +1080,24 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.7.tgz#a65ce0702f55cb67fd777995de6fc7b3e5781903"
   integrity sha512-9KbP7LTLFz9dx1heURJbO6nuVMdSjDez8znlrUzaB1nUwKVsTTwlKRuHxGUYIIkReLWrJQeCv9tidy+84z2eCw==
 
-"@react-native-firebase/app-types@6.3.4":
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.3.4.tgz#e54a3de33455417db63a7b1de2b7795af1c25cae"
-  integrity sha512-xZ1rVo+GvAfQ/fk6PalYgfsAoV6bd09Vh6SNqR7RPVf9PltaBS0gNxfITXAx6fR+7OyZ1H54orSBjyOIhM+g5Q==
+"@react-native-firebase/app-types@6.7.2":
+  version "6.7.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app-types/-/app-types-6.7.2.tgz#d2e1530af5702e00578914b41468898c10d3289c"
+  integrity sha512-pIwc6e0ZINw6PJqNVsAxzOVJUDg6au2TdulY+ZOYQ11SPDs5I2n9likoGrElPmJjajT4s9h87uz/6PWP2k9PxQ==
 
-"@react-native-firebase/app@6.3.4":
-  version "6.3.4"
-  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-6.3.4.tgz#5beee0f8ffb1e58bfc8edc054988c3a4007c5984"
-  integrity sha512-hDV3kjBn1X0KAR5kj2DVnm+65K3WVVPtIpcM4TDQIbXudsKsxoG8Z1lGZ4EY89K6EHgCouapdJf5aoqVQ4UDNw==
+"@react-native-firebase/app@7.1.4":
+  version "7.1.4"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-7.1.4.tgz#394dd04bb2eedfa7cb6ea5301110cd16946cec67"
+  integrity sha512-9v4kTxrdLilqQZ1JmznEQNVYz8du/EGuBGeUPAODNL/slvREpveZeTvr7sbkM7jMLASxwGG5Iii+HucfJw3G+g==
   dependencies:
-    "@react-native-firebase/app-types" "6.3.4"
+    "@react-native-firebase/app-types" "6.7.2"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
+
+"@react-native-firebase/auth@8.0.2":
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-8.0.2.tgz#badaba7289c7eaa4686ad79d46980e39c61ad5af"
+  integrity sha512-iYWXlX4M+lMOdtkN9prUpjRUb2kMos6GEqeA9jgXgA96BKPkuiokoHykEuBQPsWMu6psIB+FHivecqFYzhWWjA==
 
 "@react-native-firebase/database@6.3.4":
   version "6.3.4"
@@ -5662,7 +5667,7 @@ react-devtools-core@^3.6.3:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-hook-form@^5.7.2:
+react-hook-form@5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-5.7.2.tgz#a84e259e5d37dd30949af4f79c4dac31101b79ac"
   integrity sha512-bJvY348vayIvEUmSK7Fvea/NgqbT2racA2IbnJz/aPlQ3GBtaTeDITH6rtCa6y++obZzG6E3Q8VuoXPir7QYUg==
@@ -5752,7 +5757,7 @@ react-native-screens@2.3.0:
   dependencies:
     debounce "^1.2.0"
 
-react-native-splash-screen@^3.2.0:
+react-native-splash-screen@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
   integrity sha512-Ls9qiNZzW/OLFoI25wfjjAcrf2DZ975hn2vr6U9gyuxi2nooVbzQeFoQS5vQcbCt9QX5NY8ASEEAtlLdIa6KVg==

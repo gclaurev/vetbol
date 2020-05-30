@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native';
 
+import AppleSignIn from '../../services/login/apple';
 import styles from '../../styling/vetBolStyles';
 
 export default function Users() {
@@ -19,6 +20,7 @@ export default function Users() {
   return (
     <SafeAreaView>
       <View>
+        <AppleSignIn/>
         <Text>Quiero registrarme como usuario</Text>
         <TouchableOpacity
           style={styles.itemOverlayWhatsApp}
