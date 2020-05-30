@@ -724,7 +724,7 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-"@invertase/react-native-apple-authentication@^1.0.0":
+"@invertase/react-native-apple-authentication@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@invertase/react-native-apple-authentication/-/react-native-apple-authentication-1.0.0.tgz#710a2aa1f1d371931209a14b98ff2c0304847dce"
   integrity sha512-khGov+L/Qhxows3aazyXSMB/Hy0ZpMvjDSp4eWzX00uv1WCFRxSUd+IHGsCKKT0IB3GVzDygYoqYGj8xu6ahWA==
@@ -1070,7 +1070,7 @@
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-plugin/-/eslint-plugin-1.0.0.tgz#ae9a430f2c5795debca491f15a989fce86ea75a0"
   integrity sha512-GLhSN8dRt4lpixPQh+8prSCy6PYk/MT/mvji/ojAd5yshowDo6HFsimCSTD/uWAdjpUq91XK9tVdTNWfGRlKQA==
 
-"@react-native-community/geolocation@^2.0.2":
+"@react-native-community/geolocation@2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/geolocation/-/geolocation-2.0.2.tgz#ba8b40f560ead8d014740d1cdea970b33f19312e"
   integrity sha512-tTNXRCgnhJBu79mulQwzabXRpDqfh/uaDqfHVpvF0nX4NTpolpy6mvTRiFg7eWFPGRArsnZz1EYp6rHfJWGgEA==
@@ -5662,7 +5662,7 @@ react-devtools-core@^3.6.3:
     shell-quote "^1.6.1"
     ws "^3.3.1"
 
-react-hook-form@^5.7.2:
+react-hook-form@5.7.2:
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-5.7.2.tgz#a84e259e5d37dd30949af4f79c4dac31101b79ac"
   integrity sha512-bJvY348vayIvEUmSK7Fvea/NgqbT2racA2IbnJz/aPlQ3GBtaTeDITH6rtCa6y++obZzG6E3Q8VuoXPir7QYUg==
@@ -5752,7 +5752,7 @@ react-native-screens@2.3.0:
   dependencies:
     debounce "^1.2.0"
 
-react-native-splash-screen@^3.2.0:
+react-native-splash-screen@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.2.0.tgz#d47ec8557b1ba988ee3ea98d01463081b60fff45"
   integrity sha512-Ls9qiNZzW/OLFoI25wfjjAcrf2DZ975hn2vr6U9gyuxi2nooVbzQeFoQS5vQcbCt9QX5NY8ASEEAtlLdIa6KVg==
