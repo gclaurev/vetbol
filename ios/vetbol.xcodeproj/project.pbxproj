@@ -21,7 +21,7 @@
 		573286AF2446178500978D2C /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 573286AD2446178400978D2C /* FontAwesome.ttf */; };
 		5749576E2425EDBB00C315D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5749576D2425EDBA00C315D3 /* GoogleService-Info.plist */; };
 		5749576F2425EDBB00C315D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5749576D2425EDBA00C315D3 /* GoogleService-Info.plist */; };
-		577709DC2425A5AE00546831 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 577709BE2425A5AD00546831 /* MaterialIcons.ttf */; };
+		57CC2B36249418D500B5D61D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57CC2B35249418D400B5D61D /* MaterialIcons.ttf */; };
 		73DC41BAA145F6CFB91CFD0B /* libPods-vetbol-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C44E9910FFF1BE6DD9BD0E34 /* libPods-vetbol-tvOSTests.a */; };
 		AF1021D61C0DCA9AFCE4CD16 /* libPods-vetbol.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95DB79D9BA7E086FD929086 /* libPods-vetbol.a */; };
 /* End PBXBuildFile section */
@@ -63,6 +63,8 @@
 		573286AD2446178400978D2C /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		5749576D2425EDBA00C315D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		577709BE2425A5AD00546831 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../vetbolivia/node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		57CC2B35249418D400B5D61D /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		57CC2B372494231200B5D61D /* vetbol.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = vetbol.entitlements; path = vetbol/vetbol.entitlements; sourceTree = "<group>"; };
 		5E02FBBBB5D04B7BBAB1EAED /* Pods-vetbol.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vetbol.debug.xcconfig"; path = "Target Support Files/Pods-vetbol/Pods-vetbol.debug.xcconfig"; sourceTree = "<group>"; };
 		A758B6FF4D71CAC90220E290 /* Pods-vetbol-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-vetbol-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-vetbol-tvOS/Pods-vetbol-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		B95DB79D9BA7E086FD929086 /* libPods-vetbol.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-vetbol.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 		13B07FAE1A68108700A75B9A /* vetbol */ = {
 			isa = PBXGroup;
 			children = (
+				57CC2B372494231200B5D61D /* vetbol.entitlements */,
 				577709B02425A52200546831 /* Fonts */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -192,6 +195,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				57CC2B35249418D400B5D61D /* MaterialIcons.ttf */,
 				13B07FAE1A68108700A75B9A /* vetbol */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* vetbolTests */,
@@ -353,7 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577709DC2425A5AE00546831 /* MaterialIcons.ttf in Resources */,
+				57CC2B36249418D500B5D61D /* MaterialIcons.ttf in Resources */,
 				5749576F2425EDBB00C315D3 /* GoogleService-Info.plist in Resources */,
 				573286AF2446178500978D2C /* FontAwesome.ttf in Resources */,
 			);
@@ -716,6 +720,7 @@
 			baseConfigurationReference = 5E02FBBBB5D04B7BBAB1EAED /* Pods-vetbol.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = vetbol/vetbol.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = D9R9BA4K9J;
@@ -739,6 +744,7 @@
 			baseConfigurationReference = 1388909325F4300FFE14E230 /* Pods-vetbol.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = vetbol/vetbol.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D9R9BA4K9J;
 				INFOPLIST_FILE = vetbol/Info.plist;
