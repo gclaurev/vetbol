@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 
 import AppleSignIn from '../../services/login/apple';
+import FacebookSignIn from '../../services/login/facebook';
 import styles from '../../styling/vetBolStyles';
 
 export default function Users() {
@@ -28,7 +29,12 @@ export default function Users() {
           <Text style={styles.itemOverlayWhatsAppLabel}>💬 70380258 💬</Text>
         </TouchableOpacity>
       </View>
-      <View>{Platform.OS === 'ios' && <AppleSignIn />}</View>
+      <View>
+        <View>{Platform.OS === 'ios' && <AppleSignIn />}</View>
+        <View>
+          <FacebookSignIn />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
